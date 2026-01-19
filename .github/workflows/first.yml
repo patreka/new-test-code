@@ -11,7 +11,7 @@ jobs:
         with:
           node-version: 18
       - name: install dependencies
-        run: npm run lint
+        run: npm install
   deploy:
       needs: test
       runs-on: ubuntu-latest
@@ -23,6 +23,6 @@ jobs:
           with:
               node-version: 18
         - name: install dependencies
-          run: npm run lint
+          run: npm install
         - name: build sceipts
           run: echo "script builds is done"    
