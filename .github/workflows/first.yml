@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: lint run
-        uses: action/checkout@v3
+        uses: actions/checkout@v3
       - name: install nodejs
         uses: actions/setup-node@v3
         with:
@@ -17,7 +17,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
         - name: lint run
-          uses: action/checkout@v3
+          uses: actions/checkout@v3
         - name: install nodejs
           uses: actions/setup-node@v3
           with:
