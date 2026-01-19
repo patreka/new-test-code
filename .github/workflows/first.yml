@@ -1,0 +1,28 @@
+name: first
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: lint run
+        uses: action/checkout@v3
+      - name: install nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: install dependencies
+        run: npm run lint
+    deploy:
+      needs: test
+      runs-on: ubuntu-latest
+      steps:
+        - name: lint run
+          uses: action/checkout@v3
+        - name: install nodejs
+          uses: actions/setup-node@v3
+          with:
+          node-version: 18
+        - name: install dependencies
+          run: npm run lint
+        - name: build sceipts
+          run: echo "script builds is done"    
