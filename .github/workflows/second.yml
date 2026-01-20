@@ -1,0 +1,21 @@
+name: Issues Event Debug
+
+on:
+  issues:
+    types: [opened, edited, closed]
+
+jobs:
+  print-issue-event:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print issue details
+        run: |
+          echo "Event name: ${{ github.event_name }}"
+          echo "Action: ${{ github.event.action }}"
+          echo "Issue number: ${{ github.event.issue.number }}"
+          echo "Issue title: ${{ github.event.issue.title }}"
+          echo "Issue body: ${{ github.event.issue.body }}"
+          echo "Issue state: ${{ github.event.issue.state }}"
+          echo "Repository: ${{ github.repository }}"
+          echo "Actor: ${{ github.actor }}"
